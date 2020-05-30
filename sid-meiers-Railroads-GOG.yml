@@ -1,0 +1,17 @@
+name: Sid Meier's Railroads!
+game_slug: sid-meiers-railroads
+version: sid-meiers-railroads
+slug: sid-meiers-railroads-GOG
+runner: wine
+
+script:
+  game:
+    exe: $GAMEDIR/drive_c/GOG Games/Sid Meier's Railroads/RailRoads.exe
+    arch: win64
+  files:
+  - installer: N/A:Please select the GOG installer
+  installer:
+  - task:
+      executable: installer
+      name: wineexec
+      arch: win64

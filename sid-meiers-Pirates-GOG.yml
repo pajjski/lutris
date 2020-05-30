@@ -1,0 +1,29 @@
+name: Sid Meier's Pirates!
+game_slug: sid-meiers-pirates
+version: sid-meiers-pirates
+slug: sid-meiers-pirates-GOG
+runner: wine
+
+script:
+  game:
+    exe: $GAMEDIR/drive_c/GOG Games/Sid Meier's Pirates/Pirates!.exe
+    arch: win64
+  files:
+  - installer: N/A:Please select the GOG installer
+  installer:
+  - task:
+      app: dotnet40
+      description: Installing .net
+      name: winetricks
+      prefix: $GAMEDIR
+      silent: false
+  - task:
+      app: xna40
+      description: Installing xna
+      name: winetricks
+      prefix: $GAMEDIR
+      silent: false
+  - task:
+      executable: installer
+      name: wineexec
+      arch: win64

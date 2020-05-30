@@ -1,0 +1,20 @@
+name: Tony Hawk's Pro Skater 2 
+game_slug: tony-hawks-pro-skater-2 
+version: thps2-Win 
+slug: thps2-Win
+runner: wine
+
+script:
+  game:
+    exe: $GAMEDIR/drive_c/Program Files (x86)/Activision/THPS2/THawk2.exe
+    arch: win64
+  files:
+  - installer: N/A:Please select the setup.exe
+  installer:
+  - task:
+      executable: installer
+      name: wineexec
+      arch: win64
+  wine:
+    Desktop: false
+    WineDesktop: 1024x768

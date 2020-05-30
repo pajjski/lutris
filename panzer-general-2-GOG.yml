@@ -1,0 +1,20 @@
+name: Panzer General 2
+game_slug: panzer-general-2
+version: Installer
+slug: panzer-general-2-GOG
+runner: wine
+
+script:
+  game:
+    exe: $GAMEDIR/drive_c/GOG Games/Panzer General 2/PANZER2.EXE
+    arch: win64
+  files:
+  - installer: N/A:Please select the GOG installer
+  installer:
+  - task:
+      executable: installer
+      name: wineexec
+      arch: win64
+#  wine:
+#    Desktop: false
+#    WineDesktop: 1024x768
