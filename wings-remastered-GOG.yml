@@ -1,0 +1,22 @@
+game_slug: wings-remastered-edition 
+name: "Wings! Remastered Edition"
+slug: wings-remastered-edition-gog
+version: wings-remastered-edition-gog 
+runner: wine
+
+script:
+  game:
+    exe: $GAMEDIR/drive_c/GOG Games/Wings! Remastered/Wings.exe 
+    arch: win64
+    appid: 320840
+  files:
+  - install: "N/A:Select the game's setup file"
+  installer:
+  - task:
+      args: /SILENT /LANG=en /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI
+      executable: install
+      name: wineexec
+      arch: win64
+  wine:
+    Desktop: false
+    WineDesktop: 1920x1080
